@@ -1,0 +1,161 @@
+@import 'tailwindcss';
+
+/* =========================
+    THEMES
+========================= */
+
+@layer theme {
+
+  /* ===== Default Dark ===== */
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #e2e8f0;
+    --primary: #7c3aed;
+    --primary-hover: #a78bfa;
+    --secondary: #06b6d4;
+    --border: #334155;
+  }
+
+  /* ===== Light ===== */
+  [data-theme="light"] {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #0f172a;
+    --primary: #6366f1;
+    --primary-hover: #818cf8;
+    --secondary: #0ea5e9;
+    --border: #e2e8f0;
+  }
+
+  /* ===== Royal Purple ===== */
+  [data-theme="royal"] {
+    --bg: #0b021a;
+    --card: #14052c;
+    --text: #f3e8ff;
+    --primary: #9333ea;
+    --primary-hover: #c084fc;
+    --secondary: #ec4899;
+    --border: #2e1065;
+  }
+
+  /* ===== Neon Cyberpunk ===== */
+  [data-theme="neon"] {
+    --bg: #05010a;
+    --card: #0f0b1a;
+    --text: #e0f2fe;
+    --primary: #00f5ff;
+    --primary-hover: #22d3ee;
+    --secondary: #ff00c8;
+    --border: #1e1b4b;
+  }
+}
+
+
+/* =========================
+    BASE
+========================= */
+
+@layer base {
+  :root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply transition-colors duration-500;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  header {
+    @apply flex justify-between items-center px-6 py-4 shadow-md backdrop-blur-md transition-all duration-300 bg-(--card) border-b border-(--border) max-h-[20vh] h-[15vh];
+  }
+
+  a {
+    @apply transition-all duration-300;
+  }
+
+  button {
+    @apply px-4 py-2 rounded-xl font-medium transition-all duration-300;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+  }
+}
+
+
+/* =========================
+    COMPONENTS
+========================= */
+
+@layer components {
+
+  .links {
+    @apply overflow-hidden flex justify-end items-center rounded-xl shadow-md transition-all duration-300 border-y border-(--border) py-1 max-w-[min(300px,60vw)] w-full max-md:flex-col-reverse max-md:justify-center max-md:items-center hover:border-(--secondary);
+  }
+
+  .menu-icon {
+    @apply cursor-pointer transition-all duration-300 hover:text-(--primary) hover:border-(--primary) p-3 flex justify-center items-center rounded-md;
+  }
+
+  .link {
+    @apply p-3 py-1.5 rounded-lg transition-all duration-300 text-(--text);
+  }
+
+  .link:hover {
+    @apply text-(--primary);
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--primary-hover);
+    transform: scale(1.05);
+  }
+
+  .btn-secondary {
+    background: var(--secondary);
+    color: white;
+  }
+
+  .btn-secondary:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+
+  .card {
+    @apply rounded-2xl p-6 shadow-xl transition-all duration-300;
+    background: var(--card);
+    border: 1px solid var(--border);
+  }
+
+  .card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+  }
+
+}
+
+@layer utilities {
+  .image-cover {
+    @apply object-cover object-center w-full h-full;
+  }
+  
+  .icon {
+    @apply rounded-full max-w-15 overflow-hidden min-w-5 w-[10vh] h-[10vh] min-h-5 max-h-15 max-md:w-12 max-md:h-12 max-md:min-w-3 max-md:min-h-3;
+  }
+
+  .icon-large {
+    @apply rounded-full max-w-20 overflow-hidden min-w-10 w-20 h-20 min-h-10 max-h-20 max-md:w-16 max-md:h-16 max-md:min-w-5 max-md:min-h-5;
+  }
+}
