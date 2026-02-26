@@ -144,5 +144,6 @@ export const hero = {
   role: about.role,
   subtitle: "I build modern, responsive, and interactive web experiences using React, TypeScript, and scalable backend systems.",
   ctaText: "See My Work",
-  ctaLink: "/projects"
+  ctaLink: "/projects",
+  bgVideo: '/videos/bg-1.mp4',
 };
