@@ -145,5 +145,5 @@ export const hero = {
   subtitle: "I build modern, responsive, and interactive web experiences using React, TypeScript, and scalable backend systems.",
   ctaText: "See My Work",
   ctaLink: "/projects",
-  bgVideo: '/videos/bg-1.mp4',
+  bgVideo: 'https://res.cloudinary.com/dpilabjgd/video/upload/v1772131665/bg-1_xcv0m4.mp4',
 };
