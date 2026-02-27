@@ -4,8 +4,8 @@ function Skills({ className }: { className?: string }) {
    return (
       <section className={`${className || ''} flex flex-col items-center justify-center w-full gap-6 py-20 border-t border-(--border) px-10`}>
          <h2 className="text-3xl font-bold text-(--secondary) mb-6">My Skills</h2>
-         <div className="flex flex-row flex-wrap gap-6 w-full">
-            <div className='flex gap-3 h-full flex-1 justify-between'>
+         <div className="flex flex-row flex-wrap gap-6 max-md:gap-5 w-full">
+            <div className='flex gap-3 h-full max-md:pb-15 border-(--border) flex-1 justify-between'>
                <h3 className='font-bold flex-1'>Frontend:</h3>
                <ul className="list-disc list-inside flex-1 flex flex-col gap-3">
                   {skills.frontend.map((skill) => (
@@ -18,7 +18,7 @@ function Skills({ className }: { className?: string }) {
                   ))}
                </ul>
             </div>
-            <div className='flex gap-3 h-full flex-1 justify-between'>
+            <div className='flex gap-3 h-fullmax-md:pb-15 border-(--border) flex-1 justify-between'>
                <h3 className='font-bold flex-1'>Backend:</h3>
                <ul className="list-disc list-inside flex-1 flex flex-col gap-3">
                   {skills.backend.map((skill) => (
@@ -32,7 +32,7 @@ function Skills({ className }: { className?: string }) {
                </ul>
             </div>
 
-            <div className='flex gap-3 h-full flex-1 justify-between'>
+            <div className='flex gap-3 h-full border-(--border) flex-1 justify-between'>
                <h3 className='font-bold flex-1'>Tools & Platforms:</h3>
                <ul className="list-disc list-inside flex-1 flex flex-col gap-3">
                   {skills.tools.map((skill) => (
