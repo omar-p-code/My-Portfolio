@@ -14,7 +14,7 @@ function Hero() {
          <h1 className="text-4xl font-bold text-(--secondary)">{hero.title}</h1>
          <p className="text-xl text-(--text) mt-2">{hero.subtitle}</p>
          <CTABtn />
-         <video autoPlay muted loop className="object-cover object-center w-full h-full absolute -z-10 top-0 left-0 opacity-25" src={hero.bgVideo || '/videos/bg-1.mp4'} />
+         <video preload="auto" autoPlay muted playsInline loop className="object-cover object-center w-full h-full absolute -z-10 top-0 left-0 opacity-25" src={hero.bgVideo || '/videos/bg-1.mp4'} poster="/images/bg1-poster.png" />
       </section>
    )
 }
