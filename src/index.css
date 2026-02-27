@@ -88,6 +88,10 @@
     padding: 0;
 
   }
+
+  section {
+    @apply relative;
+  }
 }
 
 
