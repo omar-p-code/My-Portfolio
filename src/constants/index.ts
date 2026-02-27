@@ -147,3 +147,39 @@ export const hero = {
   ctaLink: "/projects",
   bgVideo: 'https://res.cloudinary.com/dpilabjgd/video/upload/v1772131665/bg-1_xcv0m4.mp4',
 };
+
+
+export const skills = {
+  frontend: [
+    { name: 'React', icon: '/icons/react.png' },
+    { name: 'TypeScript', icon: '/icons/typescript.png' },
+    { name: 'Tailwind CSS', icon: '/icons/tailwind.png' },
+    { name: 'Framer Motion', icon: '/icons/framer-motion.png' },
+    // { name: 'Next.js', icon: '/icons/nextjs.png' },
+    { name: 'Zustand', icon: '/icons/zustand.png' },
+    { name: 'Gsap', icon: '/icons/gsap.png' },
+    { name: 'JavaScript', icon: '/icons/javascript.png' },
+    { name: 'HTML5', icon: '/icons/html5.png' },
+    { name: 'CSS3', icon: '/icons/css3.png' },
+    { name: 'Responsive Design', icon: '/icons/responsive.png' },
+    { name: 'UI/UX Design', icon: '/icons/ui-ux.png' },
+    { name: 'Three.js', icon: '/icons/threejs.png' }
+    ],
+  backend: [
+    { name: 'Node.js', icon: '/icons/nodejs.png' },
+    { name: 'Express', icon: '/icons/express.png' },
+    { name: 'MongoDB', icon: '/icons/mongodb.png' },
+    { name: 'MySQL', icon: '/icons/mysql.png' },
+  ],
+  tools: [
+    { name: 'Git', icon: '/icons/git.png' },
+    { name: 'postman', icon: '/icons/postman.png' },
+    { name: 'Vite', icon: '/icons/vite.png' },
+    { name: 'capacitor', icon: '/icons/capacitor.png' },
+    { name: 'Cloudinary', icon: '/icons/cloudinary.png' },
+    { name: 'VS Code', icon: '/icons/vscode.png' },
+    { name: 'Figma', icon: '/icons/figma.png' },
+    { name: 'EmailJS', icon: '/icons/emailjs.png' },
+    { name: 'Vercel', icon: '/icons/vercel.png' },
+  ]
+}

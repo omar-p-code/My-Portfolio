@@ -27,9 +27,10 @@ function ContactForm({ className }: { className?: string }) {
             .then((response) => {
                console.log('SUCCESS!', response.status, response.text);
                alert('Message sent successfully!');
-               name.current!.value = '';
-               email.current!.value = '';
-               message.current!.value = '';
+               title.current!.querySelector('input')!.value = '';
+               name.current!.querySelector('input')!.value = '';
+               email.current!.querySelector('input')!.value = '';
+               message.current!.querySelector('textarea')!.value = '';
             }, (err) => {
                console.log('FAILED...', err);
                alert('Failed to send message. Please try again later.');

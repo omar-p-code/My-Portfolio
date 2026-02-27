@@ -1,4 +1,4 @@
-import { About, Contact, Hero } from "../components"
+import { About, Contact, Hero, Skills } from "../components"
 
 function Home() {
    return (
@@ -11,6 +11,7 @@ function Home() {
             <About className="flex-1 max-md:flex-1 w-full" />
             <Contact className="flex-2 max-md:flex-1 w-full" />
          </div>
+         <Skills className="w-full" />
 
       </section>
    )
