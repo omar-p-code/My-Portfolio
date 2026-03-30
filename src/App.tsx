@@ -1,7 +1,11 @@
 import { Route, Routes } from "react-router-dom"
 import { Blog, Home, Projects, Settings } from "./pages"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import gsap from "gsap"
 
 function App() {
+
+  gsap.registerPlugin(ScrollTrigger);
 
   return (
     <main>

@@ -1,52 +1,102 @@
-import { skills } from '../constants'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+import { useRef } from 'react';
+import { Card } from '.';
+import { skills } from '../constants';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Skills({ className }: { className?: string }) {
+   const sectionRef = useRef<HTMLElement>(null);
+   const row1Ref = useRef<HTMLDivElement>(null); // Frontend
+   const row2Ref = useRef<HTMLDivElement>(null); // Backend
+   const row3Ref = useRef<HTMLDivElement>(null); // Tools
+
+   useGSAP(
+      () => {
+         if (!sectionRef.current || !row1Ref.current || !row2Ref.current || !row3Ref.current) return;
+
+         const section = sectionRef.current;
+         const row1 = row1Ref.current;
+         const row2 = row2Ref.current;
+         const row3 = row3Ref.current;
+
+         const getScrollDistance = (row: HTMLDivElement) =>
+            row.scrollWidth - section.offsetWidth + 50;
+
+         const distance1 = getScrollDistance(row1);
+         const distance2 = getScrollDistance(row2);
+         const distance3 = getScrollDistance(row3);
+
+         const tl = gsap.timeline({
+            scrollTrigger: {
+               trigger: section,
+               start: "center center",
+               end: () => `+=${Math.max(distance1, distance2, distance3)}`,
+               scrub: 1.2,
+               pin: true,
+               pinSpacing: true,
+               invalidateOnRefresh: true,
+
+            },
+         });
+
+
+         tl.to(row1, {
+            x: () => -distance1,
+            ease: "none",
+         }, 0);
+
+
+         tl.fromTo(row2,
+            { x: () => -distance2 },
+            { x: 0, ease: "none", }, 0);
+
+
+         tl.to(row3, {
+            x: () => -distance3,
+            ease: "none",
+         }, 0);
+
+         return () => {
+            tl.kill();
+         };
+      },
+      []
+   );
+
    return (
-      <section className={`${className || ''} flex flex-col items-center justify-center w-full gap-6 py-20 border-t border-(--border) px-10`}>
+      <section
+         ref={sectionRef}
+         className={`scroll-container ${className || ''} flex flex-col items-center justify-center w-full gap-6 py-20 border-t border-(--border) p-10`}
+      >
          <h2 className="text-3xl font-bold text-(--secondary) mb-6">My Skills</h2>
-         <div className="flex flex-row flex-wrap gap-6 max-md:gap-5 w-full">
-            <div className='flex gap-3 h-full max-md:pb-15 border-(--border) flex-1 justify-between max-md:flex-col max-md:items-start'>
-               <h3 className='font-bold flex-1'>Frontend:</h3>
-               <ul className="list-disc list-inside flex-1 flex flex-col gap-3">
-                  {skills.frontend.map((skill) => (
-                     <li key={skill.name} className="flex items-center gap-2 relative group hover:text-(--primary)/70 transition-all">
-                        <div className="w-11 h-11 min-w-11 min-h-11 rounded-full bg-(--secondary)/50 flex items-center justify-center group-hover:bg-(--primary)/30 transition-transform">
-                           <img src={skill.icon} alt={`${skill.name}`} className="w-10 h-10 group-hover:scale-110 transition-transform" />
-                        </div>
-                        {skill.name}
-                     </li>
-                  ))}
-               </ul>
+
+         <div className="skills min-w-screen p-4 w-full overflow-hidden flex flex-col gap-6">
+
+            <div ref={row1Ref} className="min-w-screen flex flex-nowrap gap-4">
+               {skills.frontend.map(skill => (
+                  <Card key={skill.name} name={skill.name} img={skill.icon} />
+               ))}
             </div>
-            <div className='flex gap-3 h-full max-md:pb-15 border-(--border) flex-1 justify-between max-md:flex-col max-md:items-start'>
-               <h3 className='font-bold flex-1'>Backend:</h3>
-               <ul className="list-disc list-inside flex-1 flex flex-col gap-3">
-                  {skills.backend.map((skill) => (
-                     <li key={skill.name} className="flex items-center gap-2 relative group hover:text-(--primary)/70 transition-all">
-                        <div className="w-11 h-11 min-w-11 min-h-11  rounded-full bg-(--secondary)/50 flex items-center justify-center group-hover:bg-(--primary)/30">
-                           <img src={skill.icon} alt={`${skill.name}`} className="w-10 h-10 group-hover:scale-110 transition-transform" />
-                        </div>
-                        {skill.name}
-                     </li>
-                  ))}
-               </ul>
+
+
+            <div ref={row2Ref} className="min-w-screen flex flex-nowrap gap-4">
+               {skills.backend.map(skill => (
+                  <Card key={skill.name} name={skill.name} img={skill.icon} />
+               ))}
             </div>
-            <div className='flex gap-3 h-full border-(--border) flex-1 justify-between max-md:flex-col max-md:items-start'>
-               <h3 className='font-bold flex-1'>Tools & Platforms:</h3>
-               <ul className="list-disc list-inside flex-1 flex flex-col gap-3">
-                  {skills.tools.map((skill) => (
-                     <li key={skill.name} className="flex items-center gap-2 relative group hover:text-(--primary)/70 transition-all">
-                        <div className="w-11 h-11 min-w-11 min-h-11  rounded-full bg-(--secondary)/50 flex items-center justify-center group-hover:bg-(--primary)/30">
-                           <img src={skill.icon} alt={`${skill.name}`} className="w-10 h-10 group-hover:scale-110 transition-transform" />
-                        </div>
-                        {skill.name}
-                     </li>
-                  ))}
-               </ul>
+
+
+            <div ref={row3Ref} className="min-w-screen flex flex-nowrap gap-4">
+               {skills.tools.map(skill => (
+                  <Card key={skill.name} name={skill.name} img={skill.icon} />
+               ))}
             </div>
          </div>
       </section>
-   )
+   );
 }
 
-export default Skills
+export default Skills;
