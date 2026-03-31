@@ -32,7 +32,7 @@ function Skills({ className }: { className?: string }) {
          const tl = gsap.timeline({
             scrollTrigger: {
                trigger: section,
-               start: "center center",
+               start: "bottom bottom",
                end: () => `+=${Math.max(distance1, distance2, distance3)}`,
                scrub: 1.2,
                pin: true,

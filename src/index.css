@@ -115,65 +115,254 @@
 
 @layer components {
 
-  .links {
-    @apply overflow-hidden flex justify-end items-center rounded-xl shadow-md transition-all duration-300 border-y border-(--border) py-1 max-w-[min(300px,60vw)] w-full max-md:flex-col-reverse max-md:justify-center max-md:items-center hover:border-(--secondary);
-  }
+  /* =========================
+    PRELOADER - Theme Aware
+========================= */
+  @layer components {
 
-  .menu-icon {
-    @apply cursor-pointer transition-all duration-300 hover:text-(--primary) hover:border-(--primary) p-3 flex justify-center items-center rounded-md;
-  }
+    /* texts */
+    .text-shadow-primary {
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3)
+    }
 
-  .link {
-    @apply p-3 py-1.5 rounded-lg transition-all duration-300 text-(--text);
-  }
+    /* Preloader Base */
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-  .link:hover {
-    @apply text-(--primary);
-  }
+    .preloader.leaving {
+      opacity: 0;
+      pointer-events: none;
+    }
 
-  .btn-primary {
-    background: var(--primary);
-    color: white;
-  }
 
-  .btn-primary:hover {
-    background: var(--primary-hover);
-    transform: scale(1.05);
-  }
+    .preloader__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--bg), var(--card));
+      filter: blur(10px);
+      animation: overlayPulse 2s ease-in-out infinite;
+    }
 
-  .btn-secondary {
-    background: var(--secondary);
-    color: white;
-  }
 
-  .btn-secondary:hover {
-    opacity: 0.85;
-    transform: scale(1.05);
-  }
+    .preloader__container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      backdrop-filter: blur(20px);
+      background: var(--card);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      border: 1px solid var(--border);
+      box-shadow:
+        0 25px 45px rgba(0, 0, 0, 0.3),
+        0 0 0 1px var(--border);
+      animation: containerFloat 3s ease-in-out infinite;
+    }
 
-  .card {
-    @apply rounded-2xl p-6 shadow-xl transition-all duration-300;
-    background: var(--card);
-    border: 1px solid var(--border);
-  }
+    .preloader__logo {
+      margin-bottom: 2rem;
+    }
 
-  .card:hover {
-    border-color: var(--primary);
-    transform: translateY(-5px);
-  }
+    .preloader__icon {
+      width: 80px;
+      height: 80px;
+      display: block;
+      margin: 0 auto;
+    }
 
+    .preloader__circle {
+      stroke: var(--primary);
+      stroke-linecap: round;
+      transform-origin: 50% 50%;
+      animation: spin 1.4s linear infinite;
+    }
+
+    /* Progress Bar */
+    .preloader__progress {
+      position: relative;
+      height: 4px;
+      width: 200px;
+      margin: 0 auto 1.5rem;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .preloader__progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--primary-hover));
+      border-radius: 2px;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+
+    .preloader__percentage {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text);
+      -webkit-text-stroke: 1px transparent;
+      text-shadow:
+        0 0 10px var(--primary),
+        2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 1rem;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .preloader__text {
+      color: var(--text);
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 0;
+      letter-spacing: 0.5px;
+      opacity: 0.9;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Animations */
+    @keyframes overlayPulse {
+
+      0%,
+      100% {
+        opacity: 0.8;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.02);
+      }
+    }
+
+    @keyframes containerFloat {
+
+      0%,
+      100% {
+        transform: translate(-50%, -50%) translateY(0px);
+      }
+
+      50% {
+        transform: translate(-50%, -50%) translateY(-8px);
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .preloader__container {
+        padding: 2rem 1.5rem;
+        max-width: 90vw;
+      }
+
+      .preloader__icon {
+        width: 60px;
+        height: 60px;
+      }
+
+      .preloader__percentage {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+
+/* Header */
+.links {
+  @apply overflow-hidden flex justify-end items-center rounded-xl shadow-md transition-all duration-300 border-y border-(--border) py-1 max-w-[min(300px,60vw)] w-full max-md:flex-col-reverse max-md:justify-center max-md:items-center hover:border-(--secondary);
+}
+
+.menu-icon {
+  @apply cursor-pointer transition-all duration-300 hover:text-(--primary) hover:border-(--primary) p-3 flex justify-center items-center rounded-md;
+}
+
+.link {
+  @apply p-3 py-1.5 rounded-lg transition-all duration-300 text-(--text);
+}
+
+.link:hover {
+  @apply text-(--primary);
+}
+
+/* Buttons */
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+/* Card */
+
+.card {
+  @apply rounded-2xl p-6 shadow-xl transition-all duration-300;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+.card:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
 }
 
 @layer utilities {
   .image-cover {
-    @apply object-cover object-center w-full h-full;
+    @apply object-cover object-center w-full h-auto;
   }
-  
+
   .icon {
     @apply rounded-full max-w-15 overflow-hidden min-w-5 w-[10vh] h-[10vh] min-h-5 max-h-15 max-md:w-12 max-md:h-12 max-md:min-w-3 max-md:min-h-3;
   }
 
   .icon-large {
     @apply rounded-full max-w-20 overflow-hidden min-w-10 w-20 h-20 min-h-10 max-h-20 max-md:w-16 max-md:h-16 max-md:min-w-5 max-md:min-h-5;
+  }
+
+  .animate-infinite-scroll {
+    transition:all .3 cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    animation: infinite-scroll infinite 3s alternate linear;
+  }
+
+  @keyframes infinite-scroll {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(100%)
+    }
   }
 }

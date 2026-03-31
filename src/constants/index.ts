@@ -86,7 +86,7 @@ export const contact = {
 /================================================/
 */
 export const links = [
-   {
+  {
       name: 'Home',
       path: '/'
    },
@@ -135,6 +135,10 @@ interface Images {
 export const images: Record<string, Images> = {
   me: {
     name: 'My Photo',
+    link: '/images/me.png',
+  },
+  me2: {
+    name: 'My Photo',
     link: '/images/me2.png',
   }
 }
@@ -149,7 +153,19 @@ export const hero = {
 };
 
 
-export const skills = {
+export interface Skill {
+  name: string,
+  icon: string,
+}
+
+export interface Skills {
+  frontend: Skill[],
+  backend: Skill[],
+  tools: Skill[],
+}
+
+
+export const skills: Skills = {
   frontend: [
     { name: 'React', icon: '/icons/react.png' },
     { name: 'TypeScript', icon: '/icons/typescript.png' },
@@ -183,3 +199,36 @@ export const skills = {
     { name: 'Vercel', icon: '/icons/vercel.png' },
   ]
 }
+
+
+/*
+/=================================================/
+                    PROJECTS                   
+/================================================/
+*/
+
+export interface Project {
+  title: string,
+  cover: string,
+  status: string,
+  repo?: string,
+  techs?: Skill[],
+  slider?: string[],
+  description?: string,
+  demo?: string,
+  video?: string[],
+  for?: string,
+}
+
+export const projects: Project[] = [
+  {
+    title: 'My First Portfolio',
+    cover: '/images/me.png',
+    status: 'pinned',
+    techs: [
+      { name: 'React', icon: '/icons/react.png' },
+      { name: 'TypeScript', icon: '/icons/typescript.png' },
+      { name: 'Tailwind', icon: '/icons/tailwind.png' },
+    ]
+  }
+]

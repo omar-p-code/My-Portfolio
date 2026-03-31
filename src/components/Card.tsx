@@ -1,15 +1,18 @@
+import clsx from 'clsx';
+
 interface CardType {
    name: string,
-   img: string
+   img: string,
+   vertical?: boolean,
 }
 
-function Card({ name, img }: CardType) {
+function Card({ name, img, vertical = false }: CardType) {
    return (
-      <div key={name + img} className='card flex-1 flex flex-row gap-3 items-center justify-between min-w-80'>
-         <div className="img-cont w-14 h-14 bg-(--secondary)/20 rounded-md p-2">
-            <img src={img} alt={name} className='w-full h-full object-center aspect-square' />
+      <div key={name + img} className={clsx('card flex-1 flex gap-3 items-center justify-between min-w-80', vertical ? 'flex-col' : 'flex-row')}>
+         <div className={clsx("img-cont w-16 h-auto bg-(--secondary)/20 rounded-md p-2")}>
+            <img loading="lazy" src={img} alt={name} className={clsx('w-full h-full object-center aspect-square')} />
          </div>
-         <h3 className='w-full text-end p-3'>{name}</h3>
+         <h3 className={clsx('w-full p-3', vertical ? 'text-center' : 'text-end')}>{name}</h3>
       </div>
    )
 }

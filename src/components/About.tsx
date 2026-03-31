@@ -4,7 +4,7 @@ function About({ className }: { className?: string }) {
    return (
       <section className={`info text-(--text) p-5 flex flex-col items-center justify-center md:border-e border-(--border) hover:border-(--secondary) md:rounded-e-md ${className || ''}`}>
          <div className="icon-large">
-            <img src={images.me.link} alt={images.me.name} className='image-cover' />
+            <img src={images.me2.link} alt={images.me2.name} className='image-cover' />
          </div>
 
          <div className="details flex flex-col justify-center items-center">
