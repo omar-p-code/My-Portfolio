@@ -17,7 +17,7 @@ function project(project: Project) {
          </div>
 
          <img src={cover} alt={title} className="w-full h-full absolute object-cover opacity-15 object-center -z-30" />
-         <div className="overlay z-30 bg-(--card)/30 absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 hover:backdrop-blur-xs active:opacity-100 active:backdrop-blur-xs text-lg font-bold text-(--secondary) transition-opacity duration-400 cursor-pointer flex-col gap-6 p-5">
+         <div className="overlay hover-show z-30 bg-(--card)/30 absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 text-lg font-bold text-(--secondary) transition-opacity duration-400 cursor-pointer flex-col gap-6 p-5">
             <div className="details p-5 rounded-md border hover:border-(--primary) hover:text-(--primary) active:border-(--primary) active:text-(--primary) transition-colors duration-300 w-full text-center">
                details
             </div>

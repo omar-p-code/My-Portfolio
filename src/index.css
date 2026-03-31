@@ -356,6 +356,11 @@
     animation: infinite-scroll infinite 3s alternate linear;
   }
 
+  .hover-show:hover {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+  }
+
   @keyframes infinite-scroll {
     0% {
       transform: translateY(-100%);
