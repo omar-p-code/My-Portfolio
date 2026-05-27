@@ -1,8 +1,13 @@
 import type { Project } from "../constants"
+import { useNavigate, redirect } from "react-router-dom"
 
 
-function project(project: Project) {
-   const { title, cover, techs, status } = project
+function project({ project }: { project: Project }) {
+   const { title, cover, techs, status, demo } = project
+   const navigate = useNavigate()
+   function showDetails() {
+      navigate(`/projects/${title.toLocaleLowerCase().replace(/\s/g, '-')}`)
+   }
 
    return (
       <div className="
@@ -18,12 +23,12 @@ function project(project: Project) {
 
          <img src={cover} alt={title} className="w-full h-full absolute object-cover opacity-15 object-center -z-30" />
          <div className="overlay hover-show z-30 bg-(--card)/30 absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 text-lg font-bold text-(--secondary) transition-opacity duration-400 cursor-pointer flex-col gap-6 p-5">
-            <div className="details p-5 rounded-md border hover:border-(--primary) hover:text-(--primary) active:border-(--primary) active:text-(--primary) transition-colors duration-300 w-full text-center">
-               details
+            <div onClick={() => showDetails()} className="details p-5 rounded-md border hover:border-(--primary) hover:text-(--primary) active:border-(--primary) active:text-(--primary) transition-colors duration-300 w-full text-center">
+               Details
             </div>
-            <div className="demo p-5 rounded-md border hover:border-(--primary) hover:text-(--primary) active:border-(--primary) active:text-(--primary) transition-colors duration-300 w-full text-center">
+            <a href={demo || "/"} target="_blank" rel="noopener noreferrer" className="demo p-5 rounded-md border hover:border-(--primary) hover:text-(--primary) active:border-(--primary) active:text-(--primary) transition-colors duration-300 w-full text-center">
                demo
-            </div>
+            </a>
             <div className="title font-bold text-2xl max-md:text-md text-center">{title}</div>
          </div>
 

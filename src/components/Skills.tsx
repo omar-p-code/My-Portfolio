@@ -22,25 +22,25 @@ function Skills({ className }: { className?: string }) {
          const row2 = row2Ref.current;
          const row3 = row3Ref.current;
 
-         const getScrollDistance = (row: HTMLDivElement) =>
-            row.scrollWidth - section.offsetWidth + 50;
-
-         const distance1 = getScrollDistance(row1);
-         const distance2 = getScrollDistance(row2);
-         const distance3 = getScrollDistance(row3);
+         const distance1 = row1.scrollWidth - section.offsetWidth + 50;
+         const distance2 = row2.scrollWidth - section.offsetWidth + 50;
+         const distance3 = row3.scrollWidth - section.offsetWidth + 50;
 
          const tl = gsap.timeline({
             scrollTrigger: {
                trigger: section,
-               start: "bottom bottom",
+               start: "top top",
                end: () => `+=${Math.max(distance1, distance2, distance3)}`,
-               scrub: 1.2,
+               scrub: true,
                pin: true,
                pinSpacing: true,
                invalidateOnRefresh: true,
-
+               anticipatePin: 1,
+               fastScrollEnd: true,
             },
          });
+
+         gsap.set([row1, row2, row3], { willChange: "transform" });
 
 
          tl.to(row1, {
@@ -75,21 +75,21 @@ function Skills({ className }: { className?: string }) {
 
          <div className="skills min-w-screen p-4 w-full overflow-hidden flex flex-col gap-6">
 
-            <div ref={row1Ref} className="min-w-screen flex flex-nowrap gap-4">
+            <div ref={row1Ref} className="min-w-screen flex flex-nowrap gap-4 transform-gpu">
                {skills.frontend.map(skill => (
                   <Card key={skill.name} name={skill.name} img={skill.icon} />
                ))}
             </div>
 
 
-            <div ref={row2Ref} className="min-w-screen flex flex-nowrap gap-4">
+            <div ref={row2Ref} className="min-w-screen flex flex-nowrap gap-4 transform-gpu">
                {skills.backend.map(skill => (
                   <Card key={skill.name} name={skill.name} img={skill.icon} />
                ))}
             </div>
 
 
-            <div ref={row3Ref} className="min-w-screen flex flex-nowrap gap-4">
+            <div ref={row3Ref} className="min-w-screen flex flex-nowrap gap-4 transform-gpu">
                {skills.tools.map(skill => (
                   <Card key={skill.name} name={skill.name} img={skill.icon} />
                ))}

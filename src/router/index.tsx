@@ -12,6 +12,8 @@ const Settings = lazy(() => import("../pages/Settings"));
 const Header = lazy(() => import("../components/Header"));
 const Footer = lazy(() => import("../components/Footer"));
 
+const Details = lazy(() => import("../pages/Details"));
+
 const RootLayout = () => {
    const navigation = useNavigation();
    const [showPreloader, setShowPreloader] = useState(true);
@@ -48,6 +50,7 @@ export const router = createBrowserRouter([
          { path: "blog", element: <Blog /> },
          { path: "projects", element: <Projects /> },
          { path: "settings", element: <Settings /> },
+         { path: "projects/:projectId", element: <Details /> }
       ],
    },
 ]);

@@ -30,7 +30,7 @@ export const about = {
   name: 'omar',
   bio: bio,
   role: 'Fullstack Web Developer',
-    roles: [
+  roles: [
     'Fullstack Web Developer',
     'Frontend Engineer',
     'Backend Developer',
@@ -43,7 +43,7 @@ export const about = {
     'JavaScript / TypeScript Developer'
   ],
   subtitle: ' Passionate about building modern, responsive, and interactive web experiences using React, TypeScript, and creative animations.',
-  age: (birth.getMonth() + 1) >= 10 ? age: age - 1,
+  age: (birth.getMonth() + 1) >= 10 ? age : age - 1,
 }
 
 
@@ -87,17 +87,17 @@ export const contact = {
 */
 export const links = [
   {
-      name: 'Home',
-      path: '/'
-   },
-   {
-     name: 'Projects',
-     path: '/projects'
-    },
-    {
-       name: 'Blog',
-       path: '/blog'
-    },
+    name: 'Home',
+    path: '/'
+  },
+  {
+    name: 'Projects',
+    path: '/projects'
+  },
+  {
+    name: 'Blog',
+    path: '/blog'
+  },
 ]
 
 
@@ -180,7 +180,7 @@ export const skills: Skills = {
     { name: 'Responsive Design', icon: '/icons/responsive.png' },
     { name: 'UI/UX Design', icon: '/icons/ui-ux.png' },
     { name: 'Three.js', icon: '/icons/threejs.png' }
-    ],
+  ],
   backend: [
     { name: 'Node.js', icon: '/icons/nodejs.png' },
     { name: 'Express', icon: '/icons/express.png' },
@@ -229,6 +229,87 @@ export const projects: Project[] = [
       { name: 'React', icon: '/icons/react.png' },
       { name: 'TypeScript', icon: '/icons/typescript.png' },
       { name: 'Tailwind', icon: '/icons/tailwind.png' },
-    ]
-  }
+    ],
+    description: 'My very first portfolio website, built to showcase my projects and skills. It features a clean design and responsive layout.',
+    demo: 'https://my-first-portfolio.vercel.app/',
+    repo: ''
+  },
+  {
+    title: 'My First Portfolio',
+    cover: '/images/me.png',
+    status: 'pinned',
+    techs: [
+      { name: 'React', icon: '/icons/react.png' },
+      { name: 'TypeScript', icon: '/icons/typescript.png' },
+      { name: 'Tailwind', icon: '/icons/tailwind.png' },
+    ],
+    description: 'My very first portfolio website, built to showcase my projects and skills. It features a clean design and responsive layout.',
+    demo: 'https://my-first-portfolio.vercel.app/',
+    repo: ''
+  },
+  {
+    title: 'My First Portfolio',
+    cover: '/images/me.png',
+    status: 'pinned',
+    techs: [
+      { name: 'React', icon: '/icons/react.png' },
+      { name: 'TypeScript', icon: '/icons/typescript.png' },
+      { name: 'Tailwind', icon: '/icons/tailwind.png' },
+    ],
+    description: 'My very first portfolio website, built to showcase my projects and skills. It features a clean design and responsive layout.',
+    demo: 'https://my-first-portfolio.vercel.app/',
+    repo: ''
+  },
+  {
+    title: 'My First Portfolio',
+    cover: '/images/me.png',
+    status: 'pinned',
+    techs: [
+      { name: 'React', icon: '/icons/react.png' },
+      { name: 'TypeScript', icon: '/icons/typescript.png' },
+      { name: 'Tailwind', icon: '/icons/tailwind.png' },
+    ],
+    description: 'My very first portfolio website, built to showcase my projects and skills. It features a clean design and responsive layout.',
+    demo: 'https://my-first-portfolio.vercel.app/',
+    repo: ''
+  },
+  {
+    title: 'My First Portfolio',
+    cover: '/images/me.png',
+    status: 'pinned',
+    techs: [
+      { name: 'React', icon: '/icons/react.png' },
+      { name: 'TypeScript', icon: '/icons/typescript.png' },
+      { name: 'Tailwind', icon: '/icons/tailwind.png' },
+    ],
+    description: 'My very first portfolio website, built to showcase my projects and skills. It features a clean design and responsive layout.',
+    demo: 'https://my-first-portfolio.vercel.app/',
+    repo: ''
+  },
+  {
+    title: 'My First Portfolio',
+    cover: '/images/me.png',
+    status: 'pinned',
+    techs: [
+      { name: 'React', icon: '/icons/react.png' },
+      { name: 'TypeScript', icon: '/icons/typescript.png' },
+      { name: 'Tailwind', icon: '/icons/tailwind.png' },
+    ],
+    description: 'My very first portfolio website, built to showcase my projects and skills. It features a clean design and responsive layout.',
+    demo: 'https://my-first-portfolio.vercel.app/',
+    repo: ''
+  },
+  {
+    title: 'My First Portfolio',
+    cover: '/images/me.png',
+    status: 'pinned',
+    techs: [
+      { name: 'React', icon: '/icons/react.png' },
+      { name: 'TypeScript', icon: '/icons/typescript.png' },
+      { name: 'Tailwind', icon: '/icons/tailwind.png' },
+    ],
+    description: 'My very first portfolio website, built to showcase my projects and skills. It features a clean design and responsive layout.',
+    demo: 'https://my-first-portfolio.vercel.app/',
+    repo: ''
+  },
 ]
