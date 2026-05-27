@@ -126,8 +126,8 @@ function Header() {
                   }
                </div>
 
-               <div className={`menu-icon text-2xl ${isMobile ? 'border-b' : 'border-s'}`}>
-                  <MenuIcon onClick={() => handleMenu()} />
+               <div onClick={() => handleMenu()} className={`menu-icon text-2xl ${isMobile ? 'border-b' : 'border-s'}`}>
+                  <MenuIcon />
                </div>
             </div>
          </div>

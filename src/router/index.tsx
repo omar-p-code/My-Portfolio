@@ -31,7 +31,7 @@ const RootLayout = () => {
       <>
          {showPreloader && <Preloader />}
          <Header />
-         <main>
+         <main className="min-h-screen mt-[15vh]">
             <Suspense fallback={<Preloader />}>
                <Outlet />
             </Suspense>
@@ -50,7 +50,7 @@ export const router = createBrowserRouter([
          { path: "blog", element: <Blog /> },
          { path: "projects", element: <Projects /> },
          { path: "settings", element: <Settings /> },
-         { path: "projects/:projectId", element: <Details /> }
+         { path: "projects/:id", element: <Details /> }
       ],
    },
 ]);

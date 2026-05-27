@@ -135,12 +135,12 @@ interface Images {
 export const images: Record<string, Images> = {
   me: {
     name: 'My Photo',
-    link: '/images/me.png',
+    link: '/images/me-removedbg.png',
   },
   me2: {
     name: 'My Photo',
-    link: '/images/me2.png',
-  }
+    link: '/images/me2-removedbg.png',
+  },
 }
 
 export const hero = {
@@ -213,11 +213,17 @@ export interface Project {
   status: string,
   repo?: string,
   techs?: Skill[],
-  slider?: string[],
+  slider?: {
+    src: string,
+    title?: string,
+  }[],
   description?: string,
   demo?: string,
-  video?: string[],
-  for?: string,
+  video?: {
+    src: string,
+    title?: string,
+  }[],
+  client?: string,
 }
 
 export const projects: Project[] = [

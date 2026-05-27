@@ -77,21 +77,21 @@ function Skills({ className }: { className?: string }) {
 
             <div ref={row1Ref} className="min-w-screen flex flex-nowrap gap-4 transform-gpu">
                {skills.frontend.map(skill => (
-                  <Card key={skill.name} name={skill.name} img={skill.icon} />
+                  <Card key={skill.name + Math.random() * 100} name={skill.name} img={skill.icon} />
                ))}
             </div>
 
 
             <div ref={row2Ref} className="min-w-screen flex flex-nowrap gap-4 transform-gpu">
                {skills.backend.map(skill => (
-                  <Card key={skill.name} name={skill.name} img={skill.icon} />
+                  <Card key={skill.name + Math.random() * 100} name={skill.name} img={skill.icon} />
                ))}
             </div>
 
 
             <div ref={row3Ref} className="min-w-screen flex flex-nowrap gap-4 transform-gpu">
                {skills.tools.map(skill => (
-                  <Card key={skill.name} name={skill.name} img={skill.icon} />
+                  <Card key={skill.name + Math.random() * 100} name={skill.name} img={skill.icon} />
                ))}
             </div>
          </div>
