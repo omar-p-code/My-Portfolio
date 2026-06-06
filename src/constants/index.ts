@@ -169,6 +169,7 @@ export const skills: Skills = {
   frontend: [
     { name: 'React', icon: '/icons/react.png' },
     { name: 'TypeScript', icon: '/icons/typescript.png' },
+    { name: 'Sass', icon: '/icons/sass.png' },
     { name: 'Tailwind CSS', icon: '/icons/tailwind.png' },
     { name: 'Framer Motion', icon: '/icons/framer-motion.png' },
     // { name: 'Next.js', icon: '/icons/nextjs.png' },
@@ -228,94 +229,147 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: 'My First Portfolio',
-    cover: '/images/me.png',
-    status: 'pinned',
+    title: '3D T-shirt shop',
+    cover: '/images/shirt-shop.png',
+    status: 'completed',
     techs: [
       { name: 'React', icon: '/icons/react.png' },
       { name: 'TypeScript', icon: '/icons/typescript.png' },
       { name: 'Tailwind', icon: '/icons/tailwind.png' },
+      { name: 'ThreeJS', icon: '/icons/threejs.png' },
+      { name: 'NodeJS', icon: '/icons/nodejs.png' },
+      { name: 'Vite', icon: '/icons/vite.png' },
+      { name: 'Zustand', icon: '/icons/zustand.png' },
     ],
-    description: 'My very first portfolio website, built to showcase my projects and skills. It features a clean design and responsive layout.',
-    demo: 'https://my-first-portfolio.vercel.app/',
-    repo: ''
+    description: '3D T-shirt shop built with React, TypeScript, Tailwind CSS, and Three.js for an interactive shopping experience.',
+    demo: 'https://3-d-t-shirt-shop.vercel.app/',
+    repo: 'https://github.com/omar-p-code/3D-T-shirt-Shop',
+    client: 'personal project'
+
   },
   {
-    title: 'My First Portfolio',
-    cover: '/images/me.png',
-    status: 'pinned',
+    title: 'Felucca',
+    cover: '/images/felucca-profile.png',
+    status: 'MVP',
     techs: [
       { name: 'React', icon: '/icons/react.png' },
       { name: 'TypeScript', icon: '/icons/typescript.png' },
       { name: 'Tailwind', icon: '/icons/tailwind.png' },
+      // { name: 'ThreeJS', icon: '/icons/threejs.png' },
+      // { name: 'NodeJS', icon: '/icons/nodejs.png' },
+      { name: 'Vite', icon: '/icons/vite.png' },
+      { name: 'Zustand', icon: '/icons/zustand.png' },
     ],
-    description: 'My very first portfolio website, built to showcase my projects and skills. It features a clean design and responsive layout.',
-    demo: 'https://my-first-portfolio.vercel.app/',
-    repo: ''
+    description: 'Random Chat App built with React, TypeScript, and Tailwind CSS.',
+    demo: 'https://felucca.vercel.app',
+    repo: 'https://github.com/omar-p-code/felucca',
+    client: 'personal project'
+
   },
   {
-    title: 'My First Portfolio',
-    cover: '/images/me.png',
-    status: 'pinned',
+    title: 'Chat App',
+    cover: '/images/chat-app.png',
+    status: 'hosting unavailable',
     techs: [
       { name: 'React', icon: '/icons/react.png' },
       { name: 'TypeScript', icon: '/icons/typescript.png' },
       { name: 'Tailwind', icon: '/icons/tailwind.png' },
+      // { name: 'ThreeJS', icon: '/icons/threejs.png' },
+      { name: 'NodeJS', icon: '/icons/nodejs.png' },
+      { name: 'Express', icon: '/icons/express.png' },
+      { name: 'Vite', icon: '/icons/vite.png' },
+      { name: 'Zustand', icon: '/icons/zustand.png' },
     ],
-    description: 'My very first portfolio website, built to showcase my projects and skills. It features a clean design and responsive layout.',
-    demo: 'https://my-first-portfolio.vercel.app/',
-    repo: ''
+    description: "Real-time chat application built with React, TypeScript, Tailwind CSS, Node.js, and Express for seamless communication - unfortunately, there is no hosting available for this project due to the host free tier reached its limits, but you can check the repo for details or contact me for a live demo, currently only login page is available on the demo link since the backend is not hosted, but the full project is available in the repo and i will provide a live demo if you contact me",
+    demo: 'https://chat-app-eight-tau-86.vercel.app',
+    repo: 'https://github.com/omar-p-code/chat-app',
+    client: 'personal project'
+
   },
   {
-    title: 'My First Portfolio',
-    cover: '/images/me.png',
-    status: 'pinned',
+    title: '3D Apple Website',
+    cover: '/images/macbook-landing-page.png',
+    status: 'completed',
     techs: [
       { name: 'React', icon: '/icons/react.png' },
       { name: 'TypeScript', icon: '/icons/typescript.png' },
       { name: 'Tailwind', icon: '/icons/tailwind.png' },
+      { name: 'ThreeJS', icon: '/icons/threejs.png' },
+      { name: 'Gsap', icon: '/icons/gsap.png' },
+      // { name: 'NodeJS', icon: '/icons/nodejs.png' },
+      // { name: 'Express', icon: '/icons/express.png' },
+      { name: 'Vite', icon: '/icons/vite.png' },
+      { name: 'Zustand', icon: '/icons/zustand.png' },
     ],
-    description: 'My very first portfolio website, built to showcase my projects and skills. It features a clean design and responsive layout.',
-    demo: 'https://my-first-portfolio.vercel.app/',
-    repo: ''
+    description: "3D Apple Website built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for an immersive product showcase experience.",
+    demo: 'https://3d-apple-website-hazel.vercel.app',
+    repo: 'https://github.com/omar-p-code/3d_apple_website',
+    client: 'personal project'
   },
   {
-    title: 'My First Portfolio',
-    cover: '/images/me.png',
-    status: 'pinned',
+    title: 'developer portfolio',
+    cover: '/images/developer-portfolio.png',
+    status: 'completed',
     techs: [
       { name: 'React', icon: '/icons/react.png' },
       { name: 'TypeScript', icon: '/icons/typescript.png' },
       { name: 'Tailwind', icon: '/icons/tailwind.png' },
+      { name: 'ThreeJS', icon: '/icons/threejs.png' },
+      { name: 'Gsap', icon: '/icons/gsap.png' },
+      // { name: 'NodeJS', icon: '/icons/nodejs.png' },
+      // { name: 'Express', icon: '/icons/express.png' },
+      { name: 'Vite', icon: '/icons/vite.png' },
+      { name: 'Zustand', icon: '/icons/zustand.png' },
     ],
-    description: 'My very first portfolio website, built to showcase my projects and skills. It features a clean design and responsive layout.',
-    demo: 'https://my-first-portfolio.vercel.app/',
-    repo: ''
+    description: "3D Developer Portfolio built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for a visually stunning showcase of my work and skills.",
+    demo: 'https://3d-developer-portfolio-pi.vercel.app/',
+    repo: 'https://github.com/omar-p-code/3d_developer_portfolio',
+    client: 'Tutorial Project'
   },
   {
-    title: 'My First Portfolio',
-    cover: '/images/me.png',
-    status: 'pinned',
+    title: 'Browser Extensions Manager',
+    cover: '/images/browser-extensions.png',
+    status: 'completed',
     techs: [
-      { name: 'React', icon: '/icons/react.png' },
-      { name: 'TypeScript', icon: '/icons/typescript.png' },
-      { name: 'Tailwind', icon: '/icons/tailwind.png' },
+      { name: 'JavaScript', icon: '/icons/javascript.png' },
+      { name: 'sass', icon: '/icons/sass.png' },
+      { name: 'HTML5', icon: '/icons/html5.png' },
+      { name: 'Figma', icon: '/icons/figma.png' },
     ],
-    description: 'My very first portfolio website, built to showcase my projects and skills. It features a clean design and responsive layout.',
-    demo: 'https://my-first-portfolio.vercel.app/',
-    repo: ''
+    description: "client-side browser extension manager built with JavaScript, Sass, and HTML5 for a user-friendly interface to organize and control browser extensions.",
+    demo: 'https://omar-p-code.github.io/browser-extensions-manager',
+    repo: 'https://github.com/omar-p-code/browser-extensions-manager',
+    client: 'Challenge project from frontendmentor.io'
   },
   {
-    title: 'My First Portfolio',
+    title: 'Node Api',
     cover: '/images/me.png',
-    status: 'pinned',
+    status: 'completed',
+    techs: [
+      { name: 'Node.js', icon: '/icons/nodejs.png' },
+      { name: 'Express', icon: '/icons/express.png' },
+      { name: 'MongoDB', icon: '/icons/mongodb.png' },
+      { name: 'MySQL', icon: '/icons/mysql.png' },
+      { name: 'Postman', icon: '/icons/postman.png' },
+    ],
+    description: "A RESTful API built with Node.js, Express, MongoDB, and MySQL for efficient data management and seamless integration with frontend applications.",
+    repo: 'https://github.com/omar-p-code/node_api',
+    client: 'learning project'
+  },
+  {
+    title: 'Study Sum',
+    cover: '/images/study-sum.png',
+    status: 'delayed',
     techs: [
       { name: 'React', icon: '/icons/react.png' },
       { name: 'TypeScript', icon: '/icons/typescript.png' },
-      { name: 'Tailwind', icon: '/icons/tailwind.png' },
+      { name: 'Vite', icon: '/icons/vite.png' },
+      { name: 'Zustand', icon: '/icons/zustand.png' },
+      { name: 'Tailwind CSS', icon: '/icons/tailwind.png' },
     ],
-    description: 'My very first portfolio website, built to showcase my projects and skills. It features a clean design and responsive layout.',
-    demo: 'https://my-first-portfolio.vercel.app/',
-    repo: ''
+    description: "Study Sum is a web application that allows users to create and manage their study notes in a simple and organized way. Built with React, TypeScript, Vite, Zustand, and Tailwind CSS for a seamless and efficient note-taking experience.",
+    repo: 'https://github.com/omar-p-code/study_sum',
+    demo: 'https://study-sum.vercel.app',
+    client: 'learning project'
   },
 ]

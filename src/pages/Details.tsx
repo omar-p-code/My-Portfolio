@@ -34,7 +34,14 @@ function Details() {
             </div>
             <div className="row">
                <div className="text-lg mb-2 font-bold underline">Description</div>
-               <div className="cell">{description}</div>
+               <div className="cell">
+                  {description?.split(' - ').map((e, i) => (
+                     <>
+                        <div className={`${(i != description.split(' - ').length) && 'mb-3'}`}>{e}</div>
+                     </>
+                  ))}
+
+               </div>
             </div>
             <div className="row">
                <div className="text-lg mb-2 font-bold underline">Tech Stack</div>
@@ -53,7 +60,7 @@ function Details() {
             </div>
             <div className="row">
                <div className="text-lg mb-2 font-bold underline">repo</div>
-               <a href="https://github.com/user/repo" target="_blank" rel="noopener noreferrer" className="cell text-(--primary) hover:text-(--primary-hover) underline">
+               <a href={repo} target="_blank" rel="noopener noreferrer" className="cell text-(--primary) hover:text-(--primary-hover) underline">
                   {repo || 'unfortunately, there is no link available'}
                </a>
             </div>
