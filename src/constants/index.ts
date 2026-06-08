@@ -141,6 +141,11 @@ export const images: Record<string, Images> = {
     name: 'My Photo',
     link: '/images/me2-removedbg.png',
   },
+  icon: {
+    name: 'icon',
+    link: '/icons/icon.png',
+  },
+
 }
 
 export const hero = {
@@ -316,7 +321,7 @@ export const projects: Project[] = [
       { name: 'Tailwind', icon: '/icons/tailwind.png' },
       { name: 'ThreeJS', icon: '/icons/threejs.png' },
       { name: 'Gsap', icon: '/icons/gsap.png' },
-      // { name: 'NodeJS', icon: '/icons/nodejs.png' },
+      // { name: 'NodeJS', icon: '/icoimns/nodejs.png' },
       // { name: 'Express', icon: '/icons/express.png' },
       { name: 'Vite', icon: '/icons/vite.png' },
       { name: 'Zustand', icon: '/icons/zustand.png' },
