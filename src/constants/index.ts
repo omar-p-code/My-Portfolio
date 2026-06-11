@@ -125,27 +125,41 @@ export const themes = [
 ];
 
 
-interface Images {
+export interface Image {
   name: string;
-  link: string;
+  src: string;
   description?: string;
   title?: string;
 }
 
-export const images: Record<string, Images> = {
+export const images: Record<string, Image> = {
   me: {
     name: 'My Photo',
-    link: '/images/me-removedbg.png',
+    src: '/images/me-removedbg.png',
   },
   me2: {
     name: 'My Photo',
-    link: '/images/me2-removedbg.png',
+    src: '/images/me2-removedbg.png',
   },
   icon: {
     name: 'icon',
-    link: '/icons/icon.png',
+    src: '/icons/icon.png',
   },
+}
 
+export interface Video {
+  src: string,
+  name: string,
+  description?: string,
+  title?: string,
+}
+
+export const videos: Record<string, Video> = {
+  "macbook-landing-page-vid-1": {
+    name: "Macbook Landing Page Demo",
+    src: '/videos/macbook-landing-page-vid-1.mp4',
+    description: "A demo showcasing the 3D Apple Website project, built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for an immersive product showcase experience.",
+  }
 }
 
 export const hero = {
@@ -219,16 +233,10 @@ export interface Project {
   status: string,
   repo?: string,
   techs?: Skill[],
-  slider?: {
-    src: string,
-    title?: string,
-  }[],
+  slider?: Image[],
   description?: string,
   demo?: string,
-  video?: {
-    src: string,
-    title?: string,
-  }[],
+  videos?: Video[],
   client?: string,
 }
 
@@ -295,6 +303,46 @@ export const projects: Project[] = [
     title: '3D Apple Website',
     cover: '/images/macbook-landing-page.png',
     status: 'completed',
+    slider: [
+      {
+        name: "Macbook Landing Page Demo",
+        src: '/videos/macbook-landing-page-vid-1.mp4',
+        title: '3D Apple Website Demo',
+        description: "A demo showcasing the 3D Apple Website project, built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for an immersive product showcase experience.",
+      },
+      {
+        name: "Macbook Landing Page Demo",
+        src: '/images/macbook-landing-page.png',
+        title: '3D Apple Website Demo',
+        description: "A demo showcasing the 3D Apple Website project, built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for an immersive product showcase experience.",
+      },
+      {
+        name: "Macbook Landing Page Demo",
+        src: '/images/macbook-landing-page-slide-1.png',
+        title: '3D Apple Website Demo',
+        description: "A demo showcasing the 3D Apple Website project, built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for an immersive product showcase experience.",
+      },
+      {
+        name: "Macbook Landing Page Demo",
+        src: '/images/macbook-landing-page-slide-2.png',
+        title: '3D Apple Website Demo',
+        description: "A demo showcasing the 3D Apple Website project, built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for an immersive product showcase experience.",
+      },
+      {
+        name: "Macbook Landing Page Demo",
+        src: '/images/macbook-landing-page-slide-3.png',
+        title: '3D Apple Website Demo',
+        description: "A demo showcasing the 3D Apple Website project, built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for an immersive product showcase experience.",
+      },
+    ],
+    videos: [
+      {
+        name: "Macbook Landing Page Demo",
+        src: "/videos/macbook-landing-page-vid-1.mp4",
+        title: '3D Apple Website Demo',
+        description: "A demo showcasing the 3D Apple Website project, built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for an immersive product showcase experience.",
+      }
+    ],
     techs: [
       { name: 'React', icon: '/icons/react.png' },
       { name: 'TypeScript', icon: '/icons/typescript.png' },

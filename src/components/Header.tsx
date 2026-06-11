@@ -111,7 +111,7 @@ function Header() {
    return (
       <header className={`fixed w-screen top-0 z-50 bg-(--card) border-b border-(--border) flex items-center justify-between py-5 px-10 max-md:px-5 ${showHeader ? 'h-[15vh] opacity-100' : 'h-0 opacity-0 overflow-hidden'}`}>
          <div className="icon">
-            <img src={images.icon.link} alt={images.icon.name} className='image-cover' />
+            <img src={images.icon.src} alt={images.icon.name} className='image-cover' />
          </div>
 
          <div className='flex '>

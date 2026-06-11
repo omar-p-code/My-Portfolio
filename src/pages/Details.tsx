@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom"
 import { projects, type Project } from "../constants"
+import { Slider } from "../components"
 
 
 
@@ -7,25 +8,33 @@ function Details() {
    const { id } = useParams()
    const navigation = useNavigate()
 
-   const { video, client, slider, demo, title, status, repo, techs, description }: Project = projects.find(project => {
+   const { videos, client, slider, demo, title, status, repo, techs, description }: Project = projects.find(project => {
       const formattedTitle = project.title.toLocaleLowerCase().replace(/\s/g, '-')
       return formattedTitle === id
    })!
 
    return (
-      <section className="min-h-screen py-5">
+      <section className="min-h-screen py-5 flex flex-col gap-5">
          <h2 className="w-fit px-5 text-center text-(--text) text-shadow-(--text)/100 text-shadow-lg py-5 font-bold text-2xl border-s-0 border-2 border-(--secondary) hover:ps-10 transition-all duration-300 rounded-e-md cursor-default" onClick={() => navigation('/projects')}>Project Details</h2>
 
-         {video && (
-            <div className="videos flex gap-5 my-5 justify-center items-center">
-               {video.map((vid, index: number) => (
-                  <video key={index} controls className="w-fit rounded-md">
+         {videos && (
+            <div className="videos flex gap-5 my-5 py-5 justify-center items-center max-w-dvw">
+               {videos.map((vid, index: number) => (
+                  <video key={`${index}-${vid.name}`} controls autoPlay loop className="w-[min(900px,90vw)] rounded-md">
                      <source src={vid.src} type="video/mp4" />
                      Your browser does not support the video tag.
                   </video>
                ))}
             </div>
          )}
+
+         {slider && (
+            <div className="mb-5">
+               <Slider slider={slider} />
+            </div>
+         )}
+
+         <hr className="opacity-20" />
 
          <div className="table">
             <div className="row">
@@ -37,7 +46,7 @@ function Details() {
                <div className="cell">
                   {description?.split(' - ').map((e, i) => (
                      <>
-                        <div className={`${(i != description.split(' - ').length) && 'mb-3'}`}>{e}</div>
+                        <div className={`${(i != description.split(' - ').length) && 'mb-3'}`} key={`${e}-${i}`}>{e}</div>
                      </>
                   ))}
 
