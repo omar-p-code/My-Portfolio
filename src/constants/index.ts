@@ -363,6 +363,46 @@ export const projects: Project[] = [
     title: 'developer portfolio',
     cover: '/images/developer-portfolio.png',
     status: 'completed',
+    slider: [
+      {
+        name: "3D Developer Portfolio Demo",
+        src: '/videos/developer-portfolio-vid-1.mp4',
+        title: '3D Developer Portfolio Demo',
+        description: "A demo showcasing the 3D Developer Portfolio project, built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for a visually stunning showcase of my work and skills.",
+      },
+      {
+        name: "3D Developer Portfolio Demo",
+        src: '/images/developer-portfolio.png',
+        title: '3D Developer Portfolio Demo',
+        description: "A demo showcasing the 3D Developer Portfolio project, built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for a visually stunning showcase of my work and skills.",
+      },
+      {
+        name: "3D Developer Portfolio Demo",
+        src: '/images/developer-portfolio-slide-1.png',
+        title: '3D Developer Portfolio Demo',
+        description: "A demo showcasing the 3D Developer Portfolio project, built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for a visually stunning showcase of my work and skills.",
+      },
+      {
+        name: "3D Developer Portfolio Demo",
+        src: '/images/developer-portfolio-slide-2.png',
+        title: '3D Developer Portfolio Demo',
+        description: "A demo showcasing the 3D Developer Portfolio project, built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for a visually stunning showcase of my work and skills.",
+      },
+      {
+        name: "3D Developer Portfolio Demo",
+        src: '/images/developer-portfolio-slide-3.png',
+        title: '3D Developer Portfolio Demo',
+        description: "A demo showcasing the 3D Developer Portfolio project, built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for a visually stunning showcase of my work and skills.",
+      },
+    ],
+    videos: [
+      {
+        name: "3D Developer Portfolio Demo",
+        src: "/videos/developer-portfolio-vid-1.mp4",
+        title: '3D Developer Portfolio Demo',
+        description: "A demo showcasing the 3D Developer Portfolio project, built with React, TypeScript, Tailwind CSS, Three.js, and GSAP for a visually stunning showcase of my work and skills.",
+      },
+    ],
     techs: [
       { name: 'React', icon: '/icons/react.png' },
       { name: 'TypeScript', icon: '/icons/typescript.png' },
