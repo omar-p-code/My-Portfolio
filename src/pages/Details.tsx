@@ -15,7 +15,7 @@ function Details() {
 
    return (
       <section className="min-h-screen py-5 flex flex-col gap-5">
-         <h2 className="w-fit px-5 text-center text-(--text) text-shadow-(--text)/100 text-shadow-lg py-5 font-bold text-2xl border-s-0 border-2 border-(--secondary) hover:ps-10 transition-all duration-300 rounded-e-md cursor-default" onClick={() => navigation('/projects')}>Project Details</h2>
+         <h2 className="w-fit px-5 text-center text-(--text) text-shadow-(--text)/100 text-shadow-lg py-5 font-bold text-2xl border-s-0 border-2 border-(--secondary) hover:ps-10 transition-all duration-300 rounded-e-md cursor-default fixed left-0 top-[20vh] z-9999" onClick={() => navigation('/projects')}>Projects</h2>
 
          {videos && (
             <div className="videos flex gap-5 my-5 py-5 justify-center items-center max-w-dvw">
