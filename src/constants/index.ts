@@ -2,6 +2,8 @@ import MailIcon from '@mui/icons-material/Mail';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import type { ReactNode } from 'react';
+import React from 'react';
 
 
 /*
@@ -93,6 +95,14 @@ export const links = [
   {
     name: 'Projects',
     path: '/projects'
+  },
+  {
+    name: 'Store',
+    path: '/store'
+  },
+  {
+    name: 'Services',
+    path: '/services'
   },
   {
     name: 'Blog',
@@ -466,3 +476,108 @@ export const projects: Project[] = [
     client: 'learning project'
   },
 ]
+
+
+/*
+/=================================================/
+                    Blogs                   
+/================================================/
+*/
+
+export interface Blog {
+  title: string,
+  details?: string,
+  content: ReactNode,
+  id: string,
+  published: string
+}
+
+export const BlogsData: Blog[] = [
+  {
+    title: 'frist',
+    id: '1',
+    published: '6/15/2026',
+    content: React.createElement(
+      'div', {
+      className: 'text-green-500 text-3xl'
+    }, 'my first test blog'
+    )
+  }
+]
+/*
+/=================================================/
+                    Services                   
+/================================================/
+*/
+
+
+export interface Price {
+  title: string,
+  price: number,
+  features: string[],
+}
+
+export interface Service {
+  title: string,
+  description?: string,
+  icon?: string,
+  prices?: Price[]
+}
+
+export const services: Service[] = [
+  {
+    title: 'Web Development',
+    description: 'Building modern, responsive, and interactive websites and web applications using React, TypeScript, and scalable backend systems.',
+    prices: [
+      {
+        title: 'Basic Website',
+        price: 500,
+        features: [
+          'Up to 5 pages',
+          'Responsive design',
+          'Basic SEO optimization',
+          'Contact form integration',
+        ],
+      },
+    ]
+  },
+  {
+    title: 'UI/UX Design',
+    description: 'Designing intuitive and visually appealing user interfaces and experiences for websites and web applications.',
+  },
+  {
+    title: 'Backend Development',
+    description: 'Creating robust and scalable backend systems using Node.js, Express, and databases like MongoDB and MySQL.',
+  },
+  {
+    title: 'API Development',
+    description: 'Creating robust and scalable APIs for seamless integration with frontend applications and third-party services.',
+  },
+  {
+    title: 'Frontend Development',
+    description: 'Building modern, responsive, and interactive user interfaces using React, TypeScript, and Tailwind CSS.',
+  },
+  {
+    title: 'Fullstack Development',
+    description: 'Building complete web systems, from dynamic frontend interfaces to robust backend APIs and databases, for a seamless and efficient web experience.',
+  },
+  {
+    title: 'Landing Page Design',
+    description: 'Designing visually stunning and conversion-focused landing pages to effectively showcase products, services, or campaigns and drive user engagement.',
+  },
+  {
+    title: 'Mobile App Development (web-based)',
+    description: 'Creating responsive and user-friendly web-based mobile applications using React, TypeScript, Capacitor, and Tailwind CSS for a seamless experience across devices.',
+  },
+]
+
+
+
+
+
+
+/*
+/=================================================/
+                    Store                   
+/================================================/
+*/

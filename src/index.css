@@ -308,7 +308,7 @@ BASE
 
 /* Header */
 .links {
-  @apply overflow-hidden flex justify-end items-center rounded-xl shadow-md transition-all duration-300 border-y border-(--border) py-1 max-w-[min(300px,60vw)] w-full max-md:flex-col-reverse max-md:justify-center max-md:items-center hover:border-(--secondary);
+  @apply overflow-hidden flex justify-end items-center rounded-xl shadow-md transition-all duration-300 border-y border-(--border) py-1 max-w-fit w-full max-md:flex-col-reverse max-md:justify-center max-md:items-center hover:border-(--secondary);
 }
 
 .menu-icon {

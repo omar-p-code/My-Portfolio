@@ -1,8 +1,8 @@
-import React from 'react'
+import Blogs from "../components/Blogs"
 
 function Blog() {
    return (
-      <div>Blog</div>
+      <Blogs />
    )
 }
 

@@ -17,6 +17,7 @@ export const Contact = lazy(() => import('./Contact'));
 export const ContactInfo = lazy(() => import('./ContactInfo'));
 export const ContactForm = lazy(() => import('./ContactForm'));
 export const Skills = lazy(() => import('./Skills'));
+export const ServicesList = lazy(() => import('./ServicesList'));
 
 
 /*=============================

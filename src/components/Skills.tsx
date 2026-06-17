@@ -69,27 +69,27 @@ function Skills({ className }: { className?: string }) {
    return (
       <section
          ref={sectionRef}
-         className={`scroll-container ${className || ''} flex flex-col items-center justify-center w-full gap-6 py-20 border-t border-(--border) p-10`}
+         className={`scroll-container ${className || ''} flex flex-col mx-auto items-center justify-center w-full gap-6 py-20`}
       >
          <h2 className="text-3xl font-bold text-(--secondary) mb-6">My Skills</h2>
 
-         <div className="skills min-w-screen p-4 w-full overflow-hidden flex flex-col gap-6">
+         <div className="skills min-w-full p-4 w-full overflow-hidden flex flex-col gap-6">
 
-            <div ref={row1Ref} className="min-w-screen flex flex-nowrap gap-4 transform-gpu">
+            <div ref={row1Ref} className="min-w-full flex flex-nowrap gap-4 transform-gpu">
                {skills.frontend.map(skill => (
                   <Card key={skill.name + Math.random() * 100} name={skill.name} img={skill.icon} />
                ))}
             </div>
 
 
-            <div ref={row2Ref} className="min-w-screen flex flex-nowrap gap-4 transform-gpu">
+            <div ref={row2Ref} className="min-w-full flex flex-nowrap gap-4 transform-gpu">
                {skills.backend.map(skill => (
                   <Card key={skill.name + Math.random() * 100} name={skill.name} img={skill.icon} />
                ))}
             </div>
 
 
-            <div ref={row3Ref} className="min-w-screen flex flex-nowrap gap-4 transform-gpu">
+            <div ref={row3Ref} className="min-w-full flex flex-nowrap gap-4 transform-gpu">
                {skills.tools.map(skill => (
                   <Card key={skill.name + Math.random() * 100} name={skill.name} img={skill.icon} />
                ))}
