@@ -17,7 +17,7 @@ export default function Services({ className }: { className?: string }) {
          const section = sectionRef.current;
          const column = columnRef.current;
 
-         const distance = column.scrollHeight - section.offsetHeight + 50;
+         const distance = column.scrollHeight - section.clientHeight + 50;
 
          const tl = gsap.timeline({
             scrollTrigger: {
