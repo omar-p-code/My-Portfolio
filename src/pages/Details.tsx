@@ -36,7 +36,7 @@ function Details() {
 
          <hr className="opacity-20" />
 
-         <div className="table">
+         <div className="table-fixed table max-w-[90vw]">
             <div className="row">
                <div className="text-lg mb-2 font-bold underline">Title</div>
                <div className="cell">{title}</div>
@@ -52,7 +52,7 @@ function Details() {
 
                </div>
             </div>
-            <div className="row">
+            <div className="row overflow-x-auto">
                <div className="text-lg mb-2 font-bold underline">Tech Stack</div>
                <div className="cell flex gap-3">{techs!.map((skill, index) => (
                   <div key={index + '-skill'} className='py-1 px-2 flex gap-1 justify-center items-center bg-(--primary)/20 rounded-lg'>
@@ -63,23 +63,23 @@ function Details() {
                   </div>
                ))}</div>
             </div>
-            <div className="row">
+            <div className="row overflow-x-auto">
                <div className="text-lg mb-2 font-bold underline">Status</div>
                <div className="cell">{status || 'delayed'}</div>
             </div>
-            <div className="row">
+            <div className="row overflow-x-auto">
                <div className="text-lg mb-2 font-bold underline">repo</div>
                <a href={repo} target="_blank" rel="noopener noreferrer" className="cell text-(--primary) hover:text-(--primary-hover) underline">
                   {repo || 'unfortunately, there is no link available'}
                </a>
             </div>
-            <div className="row">
+            <div className="row overflow-x-auto">
                <div className="text-lg mb-2 font-bold underline">demo</div>
                <a href={demo} target="_blank" rel="noopener noreferrer" className="cell text-(--primary) hover:text-(--primary-hover) underline">
                   {demo || 'unfortunately, there is no link available'}
                </a>
             </div>
-            <div className="row">
+            <div className="row overflow-x-auto">
                <div className="text-lg mb-2 font-bold underline">for</div>
                <div className="cell">{client || 'unknown'}</div>
             </div>
