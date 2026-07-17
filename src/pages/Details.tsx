@@ -15,7 +15,7 @@ function Details() {
 
    return (
       <section className="min-h-screen py-5 flex flex-col gap-5">
-         <h2 className="w-fit px-5 text-center text-(--text) text-shadow-(--text)/100 text-shadow-lg py-5 font-bold text-2xl border-s-0 border-2 border-(--secondary) hover:ps-10 transition-all duration-300 rounded-e-md cursor-default fixed left-0 top-[20vh] z-9999" onClick={() => navigation('/projects')}>Projects</h2>
+         <h2 className="w-fit px-5 text-center text-(--text) text-shadow-(--text)/100 text-shadow-lg py-5 font-bold text-2xl border-s-0 border-2 border-(--secondary) hover:ps-10 transition-all duration-300 rounded-e-md cursor-pointers" onClick={() => navigation('/projects')}>Projects</h2>
 
          {videos && (
             <div className="videos flex gap-5 my-5 py-5 justify-center items-center max-w-dvw">
@@ -52,9 +52,9 @@ function Details() {
 
                </div>
             </div>
-            <div className="row overflow-x-auto">
+            <div className="row">
                <div className="text-lg mb-2 font-bold underline">Tech Stack</div>
-               <div className="cell flex gap-3">{techs!.map((skill, index) => (
+               <div className="cell flex flex-wrap gap-3">{techs!.map((skill, index) => (
                   <div key={index + '-skill'} className='py-1 px-2 flex gap-1 justify-center items-center bg-(--primary)/20 rounded-lg'>
                      <div className="w-5 h-5">
                         <img src={skill.icon} className="w-full h-full" />

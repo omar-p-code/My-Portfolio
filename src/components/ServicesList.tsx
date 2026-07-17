@@ -11,43 +11,43 @@ export default function Services({ className }: { className?: string }) {
    const sectionRef = useRef<HTMLElement>(null);
    const columnRef = useRef<HTMLDivElement>(null); // Frontend
 
-   useGSAP(
-      () => {
-         if (!sectionRef.current || !columnRef.current) return;
-         const section = sectionRef.current;
-         const column = columnRef.current;
+   // useGSAP(
+   //    () => {
+   //       if (!sectionRef.current || !columnRef.current) return;
+   //       const section = sectionRef.current;
+   //       const column = columnRef.current;
 
-         const distance = column.scrollHeight - section.clientHeight + 50;
+   //       const distance = column.scrollHeight - section.clientHeight + 50;
 
-         const tl = gsap.timeline({
-            scrollTrigger: {
-               trigger: section,
-               start: "top top",
-               end: () => `+=${-distance}`,
-               scrub: true,
-               pin: true,
-               pinSpacing: true,
-               invalidateOnRefresh: true,
-               anticipatePin: 1,
-               fastScrollEnd: true,
-            },
-         });
+   //       const tl = gsap.timeline({
+   //          scrollTrigger: {
+   //             trigger: section,
+   //             start: "top top",
+   //             end: () => `+=${-distance}`,
+   //             scrub: true,
+   //             pin: true,
+   //             pinSpacing: true,
+   //             invalidateOnRefresh: true,
+   //             anticipatePin: 1,
+   //             fastScrollEnd: true,
+   //          },
+   //       });
 
-         gsap.set([column], { willChange: "transform" });
-
-
-         tl.to(column, {
-            y: () => distance,
-            ease: "none",
-         }, 0);
+   //       gsap.set([column], { willChange: "transform" });
 
 
-         return () => {
-            tl.kill();
-         };
-      },
-      []
-   );
+   //       tl.to(column, {
+   //          y: () => distance,
+   //          ease: "none",
+   //       }, 0);
+
+
+   //       return () => {
+   //          tl.kill();
+   //       };
+   //    },
+   //    []
+   // );
 
    return (
       <section

@@ -3,6 +3,8 @@ import { createBrowserRouter, Outlet, useNavigation } from "react-router-dom";
 import { lazy, Suspense, useEffect, useState } from "react";
 
 import Preloader from "../components/Preloader";
+import { Store } from "../pages";
+import { Services } from "../pages";
 
 const Home = lazy(() => import("../pages/Home"));
 const Blog = lazy(() => import("../pages/Blog"));
@@ -41,6 +43,10 @@ const RootLayout = () => {
    );
 };
 
+
+
+
+
 export const router = createBrowserRouter([
    {
       path: "/",
@@ -49,6 +55,8 @@ export const router = createBrowserRouter([
          { index: true, element: <Home /> },
          { path: "blog", element: <Blog /> },
          { path: "projects", element: <Projects /> },
+         { path: "store", element: <Store /> },
+         { path: "services", element: <Services /> },
          { path: "settings", element: <Settings /> },
          { path: "projects/:id", element: <Details /> }
       ],
