@@ -29,18 +29,21 @@ export default function SliderComponent({ slider }: { slider: Image[] }) {
 
 
    return (
-      <StyledSlider {...settings} className="w-[min(80vw,1000px)] mx-auto">
-         {
-            slider.map((slide, index: number) => (
-               <div className="slide w-full" key={index + '-' + slide.name}>
-                  {slide.src.endsWith('.mp4') ? (
-                     <video src={slide.src} controls loop autoPlay className="w-fit h-full rounded-md" />
-                  ) : (
-                     <img src={slide.src} alt={slide.title || 'image'} className="w-fit h-full rouned-md" />
-                  )}
-               </div>
-            ))
-         }
-      </StyledSlider >
+      <div className="rounded-md flex pb-10">
+
+         <StyledSlider {...settings} className="w-[min(100vw,1000px)] mx-auto">
+            {
+               slider.map((slide, index: number) => (
+                  <div className="slide w-full" key={index + '-' + slide.name}>
+                     {slide.src.endsWith('.mp4') ? (
+                        <video src={slide.src} loop autoPlay className="w-fit h-full rounded-md" />
+                     ) : (
+                        <img src={slide.src} alt={slide.title || 'image'} className="w-fit h-full rouned-md" />
+                     )}
+                  </div>
+               ))
+            }
+         </StyledSlider >
+      </div>
    )
 }

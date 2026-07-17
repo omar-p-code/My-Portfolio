@@ -11,7 +11,7 @@ function ContactForm({ className }: { className?: string }) {
    const message = React.useRef<HTMLInputElement>(null);
    const title = React.useRef<HTMLInputElement>(null);
 
-   function handleSubmit(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
+   function handleSubmit(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
       e.preventDefault();
       console.log(name.current?.querySelector('input')?.value,
          email.current?.querySelector('input')?.value,
@@ -42,11 +42,9 @@ function ContactForm({ className }: { className?: string }) {
    return (
       <section className={`${className || ''}`}>
          <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
-         <form className="space-y-4">
-            <div>
+         <form className="space-y-2">
+            <div className="flex gap-3">
                <Input ref={title} label="Title" placeholder="Subject of your message?" />
-            </div>
-            <div>
                <Input ref={name} label="Name" placeholder="Your Name" />
             </div>
             <div>
@@ -55,7 +53,7 @@ function ContactForm({ className }: { className?: string }) {
             <div>
                <Input ref={message} label="Message" placeholder="Your Message" variant="filled" multiline rows={4} />
             </div>
-            <CTABtn className="mt-2 text-center w-full" icon='none' text="Send Message" onClick={handleSubmit} />
+            <CTABtn className="mt-2 text-center w-full cursor-pointer" icon='none' text="Send Message" onClick={handleSubmit} />
          </form>
       </section>
    )

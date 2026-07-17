@@ -109,7 +109,7 @@ function Header() {
    }
 
    return (
-      <header className={`fixed w-screen top-0 z-50 bg-(--card) border-b border-(--border) flex items-center justify-between py-5 px-10 max-md:px-5 ${showHeader ? 'h-[15vh] opacity-100' : 'h-0 opacity-0 overflow-hidden'}`}>
+      <header className={`${isMobile ? 'sticky' : 'fixed'} w-screen top-0 z-50 bg-(--card) border-b border-(--border) flex items-center justify-between py-5 px-10 max-md:px-5 ${!isMobile ? (showHeader ? 'h-[15vh] opacity-100' : 'h-0 opacity-0 overflow-hidden') : 'h-[15vh] opacity-100'}`}>
          <div className="icon relative">
             <div className="w-full h-full overflow-hidden rounded-full relative">
                <img src={images.icon.src} alt={images.icon.name} className='image-cover' />
