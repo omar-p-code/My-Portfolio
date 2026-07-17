@@ -19,7 +19,7 @@ export default function Preloader() {
       const timeout = setTimeout(() => {
          setProgress(100);
          setTimeout(() => clearInterval(interval), 300);
-      }, 2000);
+      }, 1000);
 
       return () => {
          clearInterval(interval);

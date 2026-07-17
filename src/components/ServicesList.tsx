@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
+// import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import { Card } from '.';
 import { services } from '../constants';
@@ -62,8 +62,8 @@ export default function Services({ className }: { className?: string }) {
 
          <div className="services min-w-full min-h-full p-4 w-full overflow-hidden">
             <div ref={columnRef} className="flex gap-6 flex-col">
-               {services.map((service) => (
-                  <Card name={service.title} img={service.icon} />
+               {services.map((service, i) => (
+                  <Card key={service.title + i} name={service.title} img={service.icon} />
                ))}
             </div>
          </div>
